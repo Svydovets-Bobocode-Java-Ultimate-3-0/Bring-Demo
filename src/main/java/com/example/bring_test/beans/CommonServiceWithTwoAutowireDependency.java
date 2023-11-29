@@ -1,5 +1,6 @@
 package com.example.bring_test.beans;
 
+import com.example.bring_test.primary.InjectionCandidate;
 import svydovets.core.annotation.Autowired;
 import svydovets.core.annotation.Component;
 
