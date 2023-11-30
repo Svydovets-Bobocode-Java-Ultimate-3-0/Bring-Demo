@@ -7,10 +7,11 @@ import svydovets.core.annotation.Qualifier;
 @Component
 public class OrderService {
 
-    @Qualifier("storeItem")
     @Autowired
+    @Qualifier("storeItem")
     private Item item;
 
-
-
+    public Item getItem() {
+        return item;
+    }
 }
