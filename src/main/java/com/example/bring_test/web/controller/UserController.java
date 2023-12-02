@@ -2,6 +2,8 @@ package com.example.bring_test.web.controller;
 
 import com.example.bring_test.web.dto.User;
 import com.example.bring_test.web.dto.UserFactory;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import svydovets.web.annotation.DeleteMapping;
 import svydovets.web.annotation.GetMapping;
 import svydovets.web.annotation.PatchMapping;
@@ -13,6 +15,7 @@ import svydovets.web.annotation.RequestMapping;
 import svydovets.web.annotation.RequestParam;
 import svydovets.web.annotation.RestController;
 
+import java.io.PrintWriter;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
@@ -68,5 +71,11 @@ public class UserController {
     @DeleteMapping("/{id}")
     public void removeWithServletRequestAndResponse(@PathVariable Long id) {
         userMap.remove(id);
+    }
+
+    @GetMapping("/request")
+    public void getUserFirstName(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        var writer = response.getWriter();
+        writer.println(request.getParameter("name"));
     }
 }
