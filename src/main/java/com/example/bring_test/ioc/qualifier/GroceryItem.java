@@ -1,14 +1,13 @@
-package com.example.invalid.qualifier;
+package com.example.bring_test.ioc.qualifier;
 
 import svydovets.core.annotation.Component;
 
 import java.math.BigDecimal;
 
 @Component
-public class StoreItem implements Item{
-
+public class GroceryItem implements Item{
     @Override
     public BigDecimal calculatePrice() {
-        return BigDecimal.valueOf(100);
+        return BigDecimal.ONE;
     }
 }

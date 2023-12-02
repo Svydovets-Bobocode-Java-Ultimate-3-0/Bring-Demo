@@ -1,4 +1,4 @@
-package com.example.invalid.qualifier;
+package com.example.bring_test.ioc.qualifier;
 
 import svydovets.core.annotation.Autowired;
 import svydovets.core.annotation.Component;

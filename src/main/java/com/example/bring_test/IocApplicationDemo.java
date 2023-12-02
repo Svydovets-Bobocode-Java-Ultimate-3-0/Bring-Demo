@@ -1,13 +1,10 @@
 package com.example.bring_test;
 
-import svydovets.core.context.AnnotationConfigApplicationContext;
+import svydovets.BringApplication;
 import svydovets.core.context.ApplicationContext;
-
-import java.util.Map;
 
 public class IocApplicationDemo {
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext("com.example.bring_test.beans");
-        Map<String, Object> beans = applicationContext.getBeans();
+        ApplicationContext applicationContext = BringApplication.run(IocApplicationDemo.class);
     }
 }
